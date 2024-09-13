@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appointment Confirmation - UG Clinic</title>
-    <link rel="stylesheet" href="shared-styles.css">
+    <title>Book Appointment - UG Clinic</title>
+    <link rel="stylesheet" href="book.css">
 </head>
 <body>
     <div class="header">
@@ -13,10 +13,24 @@
     </div>
     
     <div class="container">
+        
         <div class="form-container">
-            <p>Your info has been saved successfully and appointment has been booked. If you would like a copy of your form please click on PRINT. If not, click on OK to go back to your dashboard</p>
-            <button onclick="printForm()">PRINT</button>
-            <button onclick="goToDashboard()">OK</button>
+            <h2>ENTER YOUR INFORMATION</h2>
+            <form id="appointmentForm">
+                E-mail<input type="email" required>
+                Telephone<input type="tel"  required>
+                Parent/Spouse/Guardian's Phone <input type="tel" >
+                Time of Appointment<input type="date" placeholder="Time of Appointment" required>
+                <input type="time" required>
+               Type of Appointment <select required>
+                    <option value="">Please select type</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="followup">Follow-up</option>
+                    <option value="treatment">Treatment</option>
+                </select>
+                <textarea placeholder="Prior or Current Health Issues (e.g. Medications that you are done/still taking, whether you have cancer, diabetes, HIV, sickle cell etc.)" rows="4"></textarea>
+                <button type="submit">Done</button>
+            </form>
         </div>
     </div>
 
@@ -25,15 +39,12 @@
     <div class="bottom-bar">
         <p>© 2024 UG Clinic | All Rights Reserved</p>
     </div>
-    
     <script>
-        function printForm() {
-            window.print();
-        }
-
-        function goToDashboard() {
-            window.location.href = 'dashboard.html';
-        }
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            window.location.href = 'appointment-confirmation.html';
+        });
     </script>
 </body>
 </html>
