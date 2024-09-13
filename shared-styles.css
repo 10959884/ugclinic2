@@ -1,4 +1,4 @@
-/* shared-styles.css */
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +6,7 @@ body {
     background-color: #f0f0f0;
 }
 
+/* Header */
 .header {
     background-image: url('clinic-background.png');
     background-size: cover;
@@ -18,86 +19,137 @@ body {
 .logo {
     width: 100px;
     margin-bottom: 10px;
-    
 }
 
+/* Container */
 .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    
     border-radius: 5px;
 }
 
+/* Form container */
 .form-container {
-    background-color: #FFD58B;
-    ;
+    background-color: #FFE1AB;
     padding: 20px;
     border-radius: 5px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    height: 200px;
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    
+p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #333;
 }
 
 button {
-    background-color: #1f2f3f;
+    background-color: #87CEEB;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    margin: 100px 0;
-    margin-left: 150px;
-    width: 150px;
+    display: inline-block;
+    margin: 10px;
+    width: 100px;
+    text-align: center;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-.notification {
-    background-color: #FFD58B;
-    border: 1px solid #FFD58B;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-
-.bottom-bar{background-color: #4682B4;
+/* Bottom bar */
+.bottom-bar {
+    background-color: #4682B4;
     text-align: center;
-    margin-top: 110px;
-    padding-bottom: 20px;
-    color: #f0f0f0;}
+    padding: 20px 0;
+    color: #f0f0f0;
+}
 
-    h1 {
-        color: #002D5D;
-        text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 15px auto;
+        padding: 15px;
     }
-    
+
+    .form-container {
+        padding: 15px;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        width: 120px;
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    button {
+        width: 100px;
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between the buttons */
+    margin-top: 20px;
+}
+
+button {
+    background-color: #87CEEB;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 120px; /* Width for better alignment */
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    button {
+        width: 100px; /* Adjust button size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        width: 90px; /* Further adjust for mobile */
+    }
+}
+
