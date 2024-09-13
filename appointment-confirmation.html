@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation - UG Clinic</title>
+    <link rel="stylesheet" href="shared-styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="ug-logo.png" alt="University of Ghana Logo" class="logo">
+        <h1>UG CLINIC</h1>
+    </div>
+    
+    <div class="container">
+        <div class="form-container">
+            <p>Your info has been saved successfully and appointment has been booked. If you would like a copy of your form please click on PRINT. If not, click on OK to go back to your dashboard</p>
+            <button onclick="printForm()">PRINT</button>
+            <button onclick="goToDashboard()">OK</button>
+        </div>
+    </div>
+
+
+    
+    <div class="bottom-bar">
+        <p>© 2024 UG Clinic | All Rights Reserved</p>
+    </div>
+    
+    <script>
+        function printForm() {
+            window.print();
+        }
+
+        function goToDashboard() {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>

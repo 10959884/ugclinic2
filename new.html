@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UG Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .header {
+            background-image: linear-gradient(rgba(92, 92, 92, 0.6), rgba(74, 73, 73, 0.6)), url('clinic-background.png');
+            background-size: cover;
+            background-position: center;
+            color: #002D5D;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .header:hover::before {
+            left: 100%;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #FFE1AB;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-container {
+            background-color: #FFE1AB;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            background-color: #FFD58B;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #87CEEB;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-left: 300px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .notification {
+            background-color: #fff5d6;
+            border-left: 4px solid #ffc107;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.5s ease-out;
+        }
+        .bottom-bar{background-color: #4682B4;
+    text-align: center;
+padding-bottom: 20px;
+color: #f0f0f0;}
+
+h1 {
+    color: #002D5D;
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+}
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        tr {
+            transition: background-color 0.3s ease;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            input, select, textarea, button {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header animate__animated animate__fadeIn">
+        <img src="ug-logo.png" alt="University of Ghana Logo" class="logo animate__animated animate__bounceIn">
+        <h1 class="animate__animated animate__slideInDown">UG CLINIC</h1>
+    </div>
+    
+    <div class="container animate__animated animate__fadeInUp">
+        <h2>ENTER YOUR INFORMATION</h2>
+        <div class="form-container">
+            <form id="appointmentForm">
+                <h4>E-mail</h4>
+                <input type="email"  required>
+                <h4>Telephone</h4>
+                <input type="tel" required>
+                <h4>Parent/Spouse/Guardian's Phone</h4>
+                <input type="tel">
+                <h4>Date</h4>
+                <input type="date" required>
+                <h4>Time</h4>
+                <input type="time" required>
+                <h4>Type of Appointment</h4>
+                <select required>
+                    
+                    <option value="">Please select type</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="followup">Follow-up</option>
+                    <option value="treatment">Treatment</option>
+                </select>
+                <h4>Prior or Current Health Issues</h4>
+                <textarea  rows="4"></textarea>
+                <button type="submit">Done</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="bottom-bar">
+        <p>© 2024 UG Clinic | All Rights Reserved</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const appointmentData = Object.fromEntries(formData.entries());
+            
+            try {
+                const response = await axios.post('http://localhost:3000/api/appointments', appointmentData);
+                alert('Appointment booked successfully!');
+                window.location.href = 'dashboard.html';
+            } catch (error) {
+                alert('Error booking appointment. Please try again.');
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
