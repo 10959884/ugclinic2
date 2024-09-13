@@ -1,4 +1,4 @@
-/* shared-styles.css */
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +6,7 @@ body {
     background-color: #f0f0f0;
 }
 
+/* Header */
 .header {
     background-image: url('clinic-background.png');
     background-size: cover;
@@ -18,25 +19,27 @@ body {
 .logo {
     width: 100px;
     margin-bottom: 10px;
-    
 }
 
+/* Container */
 .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    
     border-radius: 5px;
 }
 
+/* Form container */
 .form-container {
     background-color: #FFE1AB;
-    padding: 50px;
+    padding: 20px;
     border-radius: 5px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    height: 700px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
+h2 {
+    color: #D0AA66;
+    text-align: center;
 }
 
 input, select, textarea {
@@ -46,9 +49,10 @@ input, select, textarea {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: #FFD58B;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    
+}
+
+textarea {
+    resize: none;
 }
 
 button {
@@ -58,8 +62,8 @@ button {
     border: none;
     border-radius: 15px;
     cursor: pointer;
-   
-    margin-left: 270px;
+    display: block;
+    margin: 20px auto;
     width: 150px;
 }
 
@@ -67,38 +71,67 @@ button:hover {
     background-color: #0056b3;
 }
 
-.notification {
-    background-color: #FFE1AB;
-    border: 1px solid #FFE1AB;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-
-.bottom-bar{background-color: #4682B4;
+/* Bottom bar */
+.bottom-bar {
+    background-color: #4682B4;
     text-align: center;
-    margin-top: 110px;
-    padding-bottom: 20px;
-    color: #f0f0f0;}
+    padding: 20px 0;
+    color: #f0f0f0;
+}
 
-    h1 {
-        color: #002D5D;
-        text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 15px auto;
+        padding: 15px;
     }
-    
+
+    .header {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    button {
+        width: 130px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .header {
+        padding: 5px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 120px;
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+
+    input, select, textarea {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
