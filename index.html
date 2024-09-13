@@ -6,87 +6,7 @@
     <title>Login - UG Clinic</title>
     <link rel="stylesheet" href="shared-styles.css">
     <style>
-       body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('medical-background.png');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: -1;
-}
-
-        .login-container {
-            
-            padding: 20px;
-            border-radius: 5px;
-            max-width: 400px;
-            margin: 100px auto;
-        }
-        .radio-group {
-            display: flex;
-            justify-content: space-around;
-            margin: 10px ;
-            color: rgb(255, 255, 255);
-        }
-        h2{
-            text-align: center;
-            color: #1f2f3f;
-        }
-       
-        .staffid{
-            background-color: hsla(210, 30%, 60%, 0.5); /* 50% translucent */
-            border-radius: 100px;
-            border-color: transparent;
-          
-            
-}
-
-
-
-::placeholder{color: rgb(0, 0, 0);
-text-align: center;
-}
-.logo {
-            width: 100%;                 
-            max-width: 150px;          
-            height: auto;                
-            margin-left: 120px;  
-                
-        }
-        .loginbtn{
-            width: 100%;                 
-            max-width: 150px;          
-            height: auto;                
-            margin-left: 130px;
-            background-color: #FFD58B;
-            color: #1f2f3f;
-            margin-top: 20px;
-        }
-
-
-       
+        /* Global styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -123,6 +43,7 @@ text-align: center;
             border-radius: 5px;
             max-width: 400px;
             margin: 100px auto;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .radio-group {
@@ -141,6 +62,9 @@ text-align: center;
             background-color: hsla(210, 30%, 60%, 0.5);
             border-radius: 100px;
             border-color: transparent;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         ::placeholder {
@@ -152,25 +76,74 @@ text-align: center;
             width: 100%;
             max-width: 150px;
             height: auto;
-            margin-left: 120px;
+            display: block;
+            margin: 0 auto 20px;
         }
 
         .loginbtn {
             width: 100%;
             max-width: 150px;
             height: auto;
-            margin-left: 130px;
             background-color: #FFD58B;
             color: #1f2f3f;
-            margin-top: 20px;
+            margin: 20px auto 0;
+            display: block;
         }
 
         .radio-group input[type="radio"] {
-            
             background-color: transparent;
         }
 
-       
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .login-container {
+                max-width: 90%;
+                margin: 50px auto;
+                padding: 15px;
+            }
+
+            .logo {
+                max-width: 120px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .loginbtn {
+                max-width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                max-width: 100%;
+                margin: 20px auto;
+                padding: 10px;
+            }
+
+            .logo {
+                max-width: 100px;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 0;
+            }
+
+            .radio-group input[type="radio"] {
+                margin: 5px 0;
+            }
+
+            .loginbtn {
+                max-width: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -179,10 +152,16 @@ text-align: center;
         <h2>UG CLINIC</h2>
         <form id="loginForm">
             <input type="text" class="staffid" placeholder="Student ID" required>
-            <input type="password"class="staffid" placeholder="PIN" required>
+            <input type="password" class="staffid" placeholder="PIN" required>
             <div class="radio-group">
-                Student<input type="radio" name="userType" value="student" > 
-                Staff<input type="radio" name="userType" value="staff"> 
+                <label>
+                    Student
+                    <input type="radio" name="userType" value="student" required>
+                </label>
+                <label>
+                    Staff
+                    <input type="radio" name="userType" value="staff" required>
+                </label>
             </div>
             <button type="submit" class="loginbtn">Log In</button>
         </form>
@@ -191,7 +170,7 @@ text-align: center;
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Here you would typically validate credentials
+            // Validate credentials here
             window.location.href = 'dashboard.html';
         });
     </script>
