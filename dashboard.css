@@ -1,11 +1,12 @@
-/* shared-styles.css */
+/* Global styles */
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
 }
 
+/* Header */
 .header {
     background-image: url('clinic-background.png');
     background-size: cover;
@@ -18,26 +19,32 @@ body {
 .logo {
     width: 100px;
     margin-bottom: 10px;
-    
 }
 
+/* Container */
 .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    
     border-radius: 5px;
 }
 
+.notification {
+    background-color: #CCF0FF;
+    border: 1px solid #CCF0FF;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Form container */
 .form-container {
     background-color: #FFE1AB;
-    ;
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     height: 200px;
-
 }
 
 input, select, textarea {
@@ -56,8 +63,7 @@ button {
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    margin-bottom: 50px ;
-    
+    margin-bottom: 50px;
     width: 150px;
 }
 
@@ -65,46 +71,118 @@ button:hover {
     background-color: #0056b3;
 }
 
-.notification {
-    background-color: #CCF0FF;
-    border: 1px solid #CCF0FF;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
     background-color: #FFE1AB;
-    border-radius: 30px ;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-top: 100px;
 }
 
 th, td {
-    
     padding: 8px;
     text-align: left;
 }
 
 th {
     background-color: #FFE1AB;
-    border-radius: 30px ;
+    border-radius: 30px;
 }
 
-.dif{
-    background-color: #CCF0FF;  
+.dif {
+    background-color: #CCF0FF;
 }
 
-.extension{padding-top: 50px;}
-h2{color: #D0AA66;}
+.extension {
+    padding-top: 50px;
+}
 
-.Rescheduled{color: #0022FF;}
-.Completed{color: #028C0B;}
-.Cancelled{color: #FF0000;}
+h2 {
+    color: #D0AA66;
+}
 
-.bottom-bar{background-color: #4682B4;
+.Rescheduled {
+    color: #0022FF;
+}
+
+.Completed {
+    color: #028C0B;
+}
+
+.Cancelled {
+    color: #FF0000;
+}
+
+/* Bottom bar */
+.bottom-bar {
+    background-color: #4682B4;
     text-align: center;
-padding-bottom: 20px;
-color: #f0f0f0;}
+    padding-bottom: 20px;
+    color: #f0f0f0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    button {
+        width: 100px;
+        padding: 8px 15px;
+    }
+
+    table {
+        margin-top: 50px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        margin: 5px auto;
+        padding: 10px;
+    }
+
+    .header {
+        padding: 5px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 90px;
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+
+    table {
+        margin-top: 30px;
+    }
+
+    th, td {
+        padding: 4px;
+        font-size: 0.9em;
+    }
+}
